@@ -5,20 +5,39 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, Zap, RotateCcw } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-// Mock data for demo - this will be replaced with Supabase data
-const mockSites = [
-  { id: 1, url: "https://stripe.com", isVibe: true, name: "Stripe" },
-  { id: 2, url: "https://linear.app", isVibe: true, name: "Linear" },
-  { id: 3, url: "https://vercel.com", isVibe: true, name: "Vercel" },
-  { id: 4, url: "https://github.com", isVibe: true, name: "GitHub" },
-  { id: 5, url: "https://figma.com", isVibe: true, name: "Figma" },
-  { id: 6, url: "https://example.com", isVibe: false, name: "Example" },
+// Real website data from your database
+const websiteData = [
+  { id: 1, url: "https://www.lucasjin.ca/", isVibe: false, name: "Lucas Jin" },
+  { id: 2, url: "https://danielzh.dev", isVibe: false, name: "Daniel Zhang" },
+  { id: 3, url: "https://www.jeffreyzang.com/", isVibe: false, name: "Jeffrey Zang" },
+  { id: 4, url: "https://weinstein.vercel.app/", isVibe: false, name: "Weinstein" },
+  { id: 5, url: "https://www.danielcwq.com/", isVibe: false, name: "Daniel Chew" },
+  { id: 6, url: "https://dhruvbhatia0.github.io/personal_website/", isVibe: false, name: "Dhruv Bhatia" },
+  { id: 7, url: "https://emilyqi.com/", isVibe: false, name: "Emily Qi" },
+  { id: 8, url: "https://www.shanechen.ca/", isVibe: false, name: "Shane Chen" },
+  { id: 9, url: "https://zhaju.github.io/", isVibe: false, name: "Zhaju" },
+  { id: 10, url: "https://mark123m.github.io/portfolio/", isVibe: false, name: "Mark M" },
+  { id: 11, url: "https://jellyfish-app-ys6jx.ondigitalocean.app/", isVibe: false, name: "Jellyfish App" },
+  { id: 12, url: "https://hack404.dev/", isVibe: false, name: "Hack404" },
+  { id: 13, url: "https://hackthe6ix.com/", isVibe: false, name: "HackThe6ix" },
+  { id: 14, url: "https://winstonzhao.ca/", isVibe: false, name: "Winston Zhao" },
+  { id: 15, url: "https://afaqvirk.com/", isVibe: true, name: "Afaq Virk" },
+  { id: 16, url: "https://synopsis-sigma.vercel.app/", isVibe: true, name: "Synopsis" },
+  { id: 17, url: "https://www.axiomstartups.ca/index.html#info-section", isVibe: true, name: "Axiom Startups" },
+  { id: 18, url: "https://3e8robotics.com/", isVibe: true, name: "3E8 Robotics" },
+  { id: 19, url: "https://www.matthewyang.ca", isVibe: true, name: "Matthew Yang" },
+  { id: 20, url: "https://www.villio.ai/", isVibe: true, name: "Villio AI" },
+  { id: 21, url: "https://convergencegame.ca/", isVibe: true, name: "Convergence Game" },
+  { id: 22, url: "https://www.hjcautomation.com/", isVibe: true, name: "HJC Automation" },
+  { id: 23, url: "https://www.matthew-mo.com/", isVibe: true, name: "Matthew Mo" },
+  { id: 24, url: "https://reprompt-that.vercel.app", isVibe: true, name: "Reprompt That" },
+  { id: 25, url: "https://kurtispersonalwebsite.vercel.app/", isVibe: true, name: "Kurtis Personal" },
 ];
 
 interface GameState {
   score: number;
   lives: number;
-  currentSite: typeof mockSites[0] | null;
+  currentSite: typeof websiteData[0] | null;
   gameOver: boolean;
   streak: number;
 }
@@ -38,7 +57,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
   });
 
   const getRandomSite = () => {
-    const availableSites = mockSites.filter(site => site.id !== gameState.currentSite?.id);
+    const availableSites = websiteData.filter(site => site.id !== gameState.currentSite?.id);
     return availableSites[Math.floor(Math.random() * availableSites.length)];
   };
 

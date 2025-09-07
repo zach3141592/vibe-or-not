@@ -48,9 +48,9 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
           Start Playing
         </Button>
 
-        <div className="mt-6 p-4 bg-destructive/10 rounded-lg border border-destructive/20">
+        <div className="mt-6 p-4 bg-success/10 rounded-lg border border-success/20">
           <p className="text-sm text-center text-muted-foreground">
-            <strong>Note:</strong> Connect to Supabase to load real website data and save high scores!
+            <strong>Ready to play!</strong> All 25 websites loaded and ready for rating.
           </p>
         </div>
       </Card>
