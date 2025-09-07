@@ -36,6 +36,12 @@ const websiteData = [
   { id: 27, url: "https://varun.ch/", isVibe: false, name: "Varun Biniwale" },
   { id: 28, url: "https://cristianodasilvaportfolio.weebly.com/", isVibe: false, name: "Cristiano Da Silva" },
   { id: 29, url: "https://awesomethan.github.io/personal-website/#/", isVibe: false, name: "Ethan Wang" },
+  { id: 30, url: "http://martinsit.ca/", isVibe: false, name: "Martin Sit" },
+  { id: 31, url: "https://www.casperdong.info/", isVibe: true, name: "Casper Dong" },
+  { id: 32, url: "https://solderable.dev/", isVibe: true, name: "Solderable" },
+  { id: 33, url: "https://www.contractual.ca/", isVibe: true, name: "Contractual" },
+  { id: 34, url: "https://www.ibrahimkhawar.com/", isVibe: false, name: "Ibrahim Khawar" },
+  { id: 35, url: "https://www.contractual.ca/", isVibe: true, name: "Contractual" },
 ];
 
 interface GameState {
