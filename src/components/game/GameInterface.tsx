@@ -41,7 +41,7 @@ const websiteData = [
   { id: 32, url: "https://solderable.dev/", isVibe: true, name: "Solderable" },
   { id: 33, url: "https://www.contractual.ca/", isVibe: true, name: "Contractual" },
   { id: 34, url: "https://www.ibrahimkhawar.com/", isVibe: false, name: "Ibrahim Khawar" },
-  { id: 35, url: "https://www.contractual.ca/", isVibe: true, name: "Contractual" },
+  { id: 35, url: "https://ivanliu.net/?fbclid=PAZXh0bgNhZW0CMTEAAacRcHXMd7Y_82M1mvfJDD8FLpW4uOnN1ZX64Zrpj8KixPTgRrIJdtheETnK8g_aem_R5MVfoafBBRk_dOtDCJpoQ", isVibe: false, name: "Ivan Liu" },
 ];
 
 interface GameState {
