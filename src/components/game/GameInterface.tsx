@@ -42,6 +42,8 @@ const websiteData = [
   { id: 33, url: "https://www.contractual.ca/", isVibe: true, name: "Contractual" },
   { id: 34, url: "https://www.ibrahimkhawar.com/", isVibe: false, name: "Ibrahim Khawar" },
   { id: 35, url: "https://ivanliu.net/?fbclid=PAZXh0bgNhZW0CMTEAAacRcHXMd7Y_82M1mvfJDD8FLpW4uOnN1ZX64Zrpj8KixPTgRrIJdtheETnK8g_aem_R5MVfoafBBRk_dOtDCJpoQ", isVibe: false, name: "Ivan Liu" },
+  { id: 36, url: "https://www.krishivthakuria.com/", isVibe: false, name: "Krish Thakuria" },
+  { id: 37, url: "https://moulikbudhiraja.com/", isVibe: false, name: "Moulik Budhiraja" },
 ];
 
 interface GameState {
