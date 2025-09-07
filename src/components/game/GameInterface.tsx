@@ -36,6 +36,7 @@ const websiteData = [
   { id: 27, url: "https://ddxnm1.onrender.com/index.html", isVibe: false, name: "ddxnm" },
   { id: 28, url: "https://varun.ch/", isVibe: false, name: "Varun Biniwale" },
   { id: 29, url: "https://cristianodasilvaportfolio.weebly.com/", isVibe: false, name: "Cristiano Da Silva" },
+  { id: 30, url: "https://awesomethan.github.io/personal-website/#/", isVibe: false, name: "Ethan Wang" },
 ];
 
 interface GameState {
