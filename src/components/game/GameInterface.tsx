@@ -32,6 +32,10 @@ const websiteData = [
   { id: 23, url: "https://www.matthew-mo.com/", isVibe: true, name: "Matthew Mo" },
   { id: 24, url: "https://reprompt-that.vercel.app", isVibe: true, name: "Reprompt That" },
   { id: 25, url: "https://kurtispersonalwebsite.vercel.app/", isVibe: true, name: "Kurtis Personal" },
+  { id: 26, url: "https://www.sweatfree.co/?srsltid=AfmBOor0FwaknPV-ov_R8TTUKurj8rJ61DKGSkGNkCAPrOHZkYWn_uNP", isVibe: false, name: "Sweat Free" },
+  { id: 27, url: "https://ddxnm1.onrender.com/index.html", isVibe: false, name: "ddxnm" },
+  { id: 28, url: "https://varun.ch/", isVibe: false, name: "Varun Biniwale" },
+  { id: 29, url: "https://cristianodasilvaportfolio.weebly.com/", isVibe: false, name: "Cristiano Da Silva" },
 ];
 
 interface GameState {
