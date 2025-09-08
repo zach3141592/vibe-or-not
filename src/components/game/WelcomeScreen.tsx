@@ -9,11 +9,21 @@ interface WelcomeScreenProps {
 export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <Card className="p-8 max-w-2xl mx-auto bg-card border border-border shadow-card">
+      <Card className="p-8 max-w-2xl mx-auto border border-border shadow-card" style={{ backgroundColor: '#313032' }}>
         <div className="text-center mb-8">
-          <h1 className="text-6xl font-bold text-foreground mb-4 font-serif">
-            Vibe or Not
-          </h1>
+          <div className="mb-4 flex justify-center">
+            <video 
+              autoPlay 
+              muted 
+              className="h-24 w-auto"
+              style={{ maxWidth: '100%' }}
+            >
+              <source src="/title.mp4" type="video/mp4" />
+              <h1 className="text-6xl font-bold text-foreground mb-4 font-serif">
+                Vibe or Not
+              </h1>
+            </video>
+          </div>
           <p className="text-xl text-muted-foreground mb-2">
             Deduce which sites are vibe coded...
           </p>
