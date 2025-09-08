@@ -116,7 +116,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         }));
         
         toast({
-          title: "Game Over! 💀",
+          title: "Game Over 💀",
           description: `Final score: ${gameState.score}`,
           variant: "destructive",
         });
@@ -180,7 +180,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Vibe or Not
+              Vibed or Not
             </h1>
             <Badge variant="secondary" className="bg-primary/10 text-primary">
               Score: {gameState.score}
@@ -204,7 +204,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
       {/* Main Game Area */}
       <div className="p-4 max-w-4xl mx-auto">
         {gameState.currentSite && (
-          <div className="grid gap-6">
+          <div className="grid gap-4">
             {/* Website Preview */}
             <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 shadow-card animate-fade-in">
               <div className="p-4 bg-background/50 border-b border-border">
@@ -223,13 +223,13 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
             </Card>
 
             {/* Voting Buttons */}
-            <div className="flex gap-4 justify-center animate-slide-up">
+            <div className="flex gap-4 justify-center animate-slide-up mb-32">
               <Button
                 onClick={() => handleVote(false)}
                 size="lg"
                 className="bg-gradient-not-vibe hover:bg-gradient-not-vibe/90 text-not-vibe-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
               >
-                Not Vibe 👎
+                Not Vibed 👎
               </Button>
               
               <Button
@@ -237,7 +237,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
                 size="lg"
                 className="bg-gradient-vibe hover:bg-gradient-vibe/90 text-vibe-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
               >
-                Vibe ✨
+                Vibed 👍
               </Button>
             </div>
           </div>

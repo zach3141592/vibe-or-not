@@ -15,7 +15,7 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
             Vibe or Not
           </h1>
           <p className="text-xl text-muted-foreground mb-2">
-            Rate websites on their vibe factor
+            Deduce which sites are vibe coded...
           </p>
           <p className="text-sm text-muted-foreground">
             Can you spot which sites have that special something?
@@ -25,7 +25,7 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
         <div className="grid gap-4 mb-8">
           <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg">
             <Target className="h-5 w-5 text-primary" />
-            <span className="text-sm">Vote "Vibe" or "Not Vibe" for each website</span>
+            <span className="text-sm">Vote "Vibed" or "Not Vibed" for each website</span>
           </div>
           
           <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg">
