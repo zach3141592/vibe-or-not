@@ -2,8 +2,17 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Zap, RotateCcw } from "lucide-react";
+import { Heart, Zap, RotateCcw, Trophy } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 // Real website data from your database
 const websiteData = [
@@ -55,6 +64,8 @@ interface GameState {
   currentSite: typeof websiteData[0] | null;
   gameOver: boolean;
   streak: number;
+  usedSiteIds: number[];
+  allSitesCompleted: boolean;
 }
 
 interface GameInterfaceProps {
@@ -69,38 +80,72 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
     currentSite: null,
     gameOver: false,
     streak: 0,
+    usedSiteIds: [],
+    allSitesCompleted: false,
   });
 
   const getRandomSite = () => {
-    const availableSites = websiteData.filter(site => site.id !== gameState.currentSite?.id);
+    const availableSites = websiteData.filter(
+      site => !gameState.usedSiteIds.includes(site.id)
+    );
+    
+    if (availableSites.length === 0) {
+      return null; // All sites have been used
+    }
+    
     return availableSites[Math.floor(Math.random() * availableSites.length)];
   };
 
   const startNewGame = () => {
-    setGameState({
+    const newGameState = {
       score: 0,
       lives: 3,
-      currentSite: getRandomSite(),
+      currentSite: null,
       gameOver: false,
       streak: 0,
+      usedSiteIds: [],
+      allSitesCompleted: false,
+    };
+    
+    // Get the first site for the new game
+    const availableSites = websiteData;
+    const firstSite = availableSites[Math.floor(Math.random() * availableSites.length)];
+    
+    setGameState({
+      ...newGameState,
+      currentSite: firstSite,
+      usedSiteIds: [firstSite.id],
     });
   };
 
   const handleVote = (userVote: boolean) => {
-    if (!gameState.currentSite || gameState.gameOver) return;
+    if (!gameState.currentSite || gameState.gameOver || gameState.allSitesCompleted) return;
 
     const isCorrect = userVote === gameState.currentSite.isVibe;
+    const nextSite = getRandomSite();
     
     if (isCorrect) {
       const newScore = gameState.score + 10 + (gameState.streak * 2);
       const newStreak = gameState.streak + 1;
       
-      setGameState(prev => ({
-        ...prev,
-        score: newScore,
-        streak: newStreak,
-        currentSite: getRandomSite(),
-      }));
+      if (!nextSite) {
+        // All sites completed!
+        setGameState(prev => ({
+          ...prev,
+          score: newScore,
+          streak: newStreak,
+          allSitesCompleted: true,
+          currentSite: null,
+        }));
+      } else {
+        setGameState(prev => ({
+          ...prev,
+          score: newScore,
+          streak: newStreak,
+          currentSite: nextSite,
+          usedSiteIds: [...prev.usedSiteIds, nextSite.id],
+        }));
+      }
 
       toast({
         title: "Correct! 🎉",
@@ -124,12 +169,24 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
           variant: "destructive",
         });
       } else {
-        setGameState(prev => ({
-          ...prev,
-          lives: newLives,
-          streak: 0,
-          currentSite: getRandomSite(),
-        }));
+        if (!nextSite) {
+          // All sites completed!
+          setGameState(prev => ({
+            ...prev,
+            lives: newLives,
+            streak: 0,
+            allSitesCompleted: true,
+            currentSite: null,
+          }));
+        } else {
+          setGameState(prev => ({
+            ...prev,
+            lives: newLives,
+            streak: 0,
+            currentSite: nextSite,
+            usedSiteIds: [...prev.usedSiteIds, nextSite.id],
+          }));
+        }
 
         toast({
           title: "Wrong! 😵",
@@ -170,6 +227,47 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
           >
             <RotateCcw className="mr-2 h-4 w-4" />
             Play Again
+          </Button>
+        </Card>
+      </div>
+    );
+  }
+
+  if (gameState.allSitesCompleted) {
+    return (
+      <div className="min-h-screen bg-gradient-secondary flex items-center justify-center p-4">
+        <Card className="p-8 text-center max-w-md mx-auto bg-card/50 backdrop-blur-sm border-primary/20 shadow-glow">
+          <div className="mb-6">
+            <Trophy className="h-16 w-16 text-vibe mx-auto mb-4" />
+            <h1 className="text-4xl font-bold bg-gradient-vibe bg-clip-text text-transparent mb-2">
+              Congratulations!
+            </h1>
+            <p className="text-muted-foreground">You've rated all {websiteData.length} websites!</p>
+          </div>
+          
+          <div className="mb-6 p-4 bg-vibe/10 rounded-lg border border-vibe/20">
+            <p className="text-2xl font-bold text-foreground">Final Score</p>
+            <p className="text-4xl font-bold bg-gradient-vibe bg-clip-text text-transparent">
+              {gameState.score}
+            </p>
+          </div>
+
+          <Button 
+            onClick={startNewGame}
+            size="lg"
+            className="w-full bg-gradient-vibe hover:bg-gradient-vibe/90 text-vibe-foreground font-semibold mb-4"
+          >
+            <RotateCcw className="mr-2 h-4 w-4" />
+            Play Again
+          </Button>
+
+          <Button 
+            onClick={onBackToMenu}
+            variant="outline"
+            size="lg"
+            className="w-full"
+          >
+            Back to Menu
           </Button>
         </Card>
       </div>
