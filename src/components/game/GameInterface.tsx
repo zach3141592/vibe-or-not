@@ -147,9 +147,9 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
       }
 
       toast({
-        title: "Correct! 🎉",
+        title: "Correct!",
         description: `+${10 + (gameState.streak * 2)} points ${newStreak > 1 ? `(${newStreak}x streak!)` : ''}`,
-        className: "bg-gradient-vibe border-vibe",
+        className: "bg-gray-300 border border-black text-black",
       });
     } else {
       const newLives = gameState.lives - 1;
@@ -163,7 +163,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         }));
         
         toast({
-          title: "Game Over 💀",
+          title: "Game Over",
           description: `Final score: ${gameState.score}`,
           variant: "destructive",
         });
@@ -188,7 +188,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         }
 
         toast({
-          title: "Wrong! 😵",
+          title: "Wrong!",
           description: `${newLives} ${newLives === 1 ? 'life' : 'lives'} remaining`,
           variant: "destructive",
         });
@@ -203,17 +203,17 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
   if (gameState.gameOver) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <Card className="p-8 text-center max-w-md mx-auto bg-card border border-border shadow-card">
+        <Card className="p-8 text-center max-w-md mx-auto bg-white border border-border shadow-card">
           <div className="mb-6">
-            <h1 className="text-4xl font-bold text-foreground mb-2 font-serif">
+            <h1 className="text-4xl font-bold text-black mb-2 font-serif">
               Game Over!
             </h1>
-            <p className="text-muted-foreground">You've used all your lives</p>
+            <p className="text-gray-600">You've used all your lives</p>
           </div>
           
-          <div className="mb-6 p-4 bg-muted border-l-4 border-primary">
-            <p className="text-2xl font-bold text-foreground">Final Score</p>
-            <p className="text-4xl font-bold text-foreground font-serif">
+          <div className="mb-6 p-4 bg-gray-50 border-l-4 border-black">
+            <p className="text-2xl font-bold text-black">Final Score</p>
+            <p className="text-4xl font-bold text-black font-serif">
               {gameState.score}
             </p>
           </div>
@@ -222,7 +222,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
             onClick={startNewGame}
             variant="default"
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold border font-serif"
+            className="bg-black hover:bg-gray-800 text-white font-semibold border font-serif"
           >
             <RotateCcw className="mr-2 h-4 w-4" />
             Play Again
@@ -235,18 +235,18 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
   if (gameState.allSitesCompleted) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <Card className="p-8 text-center max-w-md mx-auto bg-card border border-border shadow-card">
+        <Card className="p-8 text-center max-w-md mx-auto bg-white border border-border shadow-card">
           <div className="mb-6">
-            <Trophy className="h-16 w-16 text-vibe mx-auto mb-4" />
-            <h1 className="text-4xl font-bold text-foreground mb-2 font-serif">
+            <Trophy className="h-16 w-16 text-black mx-auto mb-4" />
+            <h1 className="text-4xl font-bold text-black mb-2 font-serif">
               Congratulations!
             </h1>
-            <p className="text-muted-foreground">You've rated all {websiteData.length} websites!</p>
+            <p className="text-gray-600">You've rated all {websiteData.length} websites!</p>
           </div>
           
-          <div className="mb-6 p-4 bg-muted border-l-4 border-success">
-            <p className="text-2xl font-bold text-foreground">Final Score</p>
-            <p className="text-4xl font-bold text-foreground font-serif">
+          <div className="mb-6 p-4 bg-gray-50 border-l-4 border-black">
+            <p className="text-2xl font-bold text-black">Final Score</p>
+            <p className="text-4xl font-bold text-black font-serif">
               {gameState.score}
             </p>
           </div>
@@ -254,7 +254,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
           <Button 
             onClick={startNewGame}
             size="lg"
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mb-4 border font-serif"
+            className="w-full bg-black hover:bg-gray-800 text-white font-semibold mb-4 border font-serif"
           >
             <RotateCcw className="mr-2 h-4 w-4" />
             Play Again
