@@ -40,7 +40,7 @@ const websiteData = [
   { id: 22, url: "https://www.matthew-mo.com/", isVibe: true, name: "Matthew Mo" },
   { id: 23, url: "https://reprompt-that.vercel.app", isVibe: true, name: "Reprompt That" },
   { id: 24, url: "https://kurtispersonalwebsite.vercel.app/", isVibe: true, name: "Kurtis Personal" },
-  { id: 25, url: "https://www.sweatfree.co/?srsltid=AfmBOor0FwaknPV-ov_R8TTUKurj8rJ61DKGSkGNkCAPrOHZkYWn_uNP", isVibe: false, name: "Sweat Free" },
+  { id: 25, url: "https://www.lohani.ca/", isVibe: true, name: "Pravin Lohani" },
   { id: 26, url: "https://ddxnm1.onrender.com/index.html", isVibe: false, name: "ddxnm" },
   { id: 27, url: "https://varun.ch/", isVibe: false, name: "Varun Biniwale" },
   { id: 28, url: "https://cristianodasilvaportfolio.weebly.com/", isVibe: false, name: "Cristiano Da Silva" },
@@ -55,7 +55,6 @@ const websiteData = [
   { id: 37, url: "https://moulikbudhiraja.com/", isVibe: false, name: "Moulik Budhiraja" },
   { id: 38, url: "https://suneru.ca/", isVibe: false, name: "Suneru Perera" },
   { id: 39, url: "https://www.krishgarg.ca/", isVibe: false, name: "Krish Garg" },
-  { id: 40, url: "https://www.lohani.ca/", isVibe: true, name: "Pravin Lohani" },
 ];
 
 interface GameState {
@@ -307,7 +306,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         {gameState.currentSite && (
           <div className="grid gap-4">
             {/* Website Preview */}
-            <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 shadow-card animate-fade-in">
+            <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 shadow-card">
               <div className="p-4 bg-background/50 border-b border-border">
                 <p className="text-sm text-muted-foreground">Rate this website:</p>
                 <h2 className="text-lg font-semibold text-foreground">{gameState.currentSite.name}</h2>
@@ -324,7 +323,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
             </Card>
 
             {/* Voting Buttons */}
-            <div className="flex gap-4 justify-center animate-slide-up mb-32">
+            <div className="flex gap-4 justify-center mb-32">
               <Button
                 onClick={() => handleVote(false)}
                 size="lg"
