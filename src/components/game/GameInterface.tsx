@@ -202,18 +202,18 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
 
   if (gameState.gameOver) {
     return (
-      <div className="min-h-screen bg-gradient-secondary flex items-center justify-center p-4">
-        <Card className="p-8 text-center max-w-md mx-auto bg-card/50 backdrop-blur-sm border-primary/20 shadow-glow">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <Card className="p-8 text-center max-w-md mx-auto bg-card border border-border shadow-card">
           <div className="mb-6">
-            <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
+            <h1 className="text-4xl font-bold text-foreground mb-2 font-serif">
               Game Over!
             </h1>
             <p className="text-muted-foreground">You've used all your lives</p>
           </div>
           
-          <div className="mb-6 p-4 bg-primary/10 rounded-lg">
+          <div className="mb-6 p-4 bg-muted border-l-4 border-primary">
             <p className="text-2xl font-bold text-foreground">Final Score</p>
-            <p className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <p className="text-4xl font-bold text-foreground font-serif">
               {gameState.score}
             </p>
           </div>
@@ -222,7 +222,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
             onClick={startNewGame}
             variant="default"
             size="lg"
-            className="bg-gradient-vibe hover:bg-gradient-vibe/90 text-vibe-foreground font-semibold"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold border font-serif"
           >
             <RotateCcw className="mr-2 h-4 w-4" />
             Play Again
@@ -234,19 +234,19 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
 
   if (gameState.allSitesCompleted) {
     return (
-      <div className="min-h-screen bg-gradient-secondary flex items-center justify-center p-4">
-        <Card className="p-8 text-center max-w-md mx-auto bg-card/50 backdrop-blur-sm border-primary/20 shadow-glow">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <Card className="p-8 text-center max-w-md mx-auto bg-card border border-border shadow-card">
           <div className="mb-6">
             <Trophy className="h-16 w-16 text-vibe mx-auto mb-4" />
-            <h1 className="text-4xl font-bold bg-gradient-vibe bg-clip-text text-transparent mb-2">
+            <h1 className="text-4xl font-bold text-foreground mb-2 font-serif">
               Congratulations!
             </h1>
             <p className="text-muted-foreground">You've rated all {websiteData.length} websites!</p>
           </div>
           
-          <div className="mb-6 p-4 bg-vibe/10 rounded-lg border border-vibe/20">
+          <div className="mb-6 p-4 bg-muted border-l-4 border-success">
             <p className="text-2xl font-bold text-foreground">Final Score</p>
-            <p className="text-4xl font-bold bg-gradient-vibe bg-clip-text text-transparent">
+            <p className="text-4xl font-bold text-foreground font-serif">
               {gameState.score}
             </p>
           </div>
@@ -254,7 +254,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
           <Button 
             onClick={startNewGame}
             size="lg"
-            className="w-full bg-gradient-vibe hover:bg-gradient-vibe/90 text-vibe-foreground font-semibold mb-4"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mb-4 border font-serif"
           >
             <RotateCcw className="mr-2 h-4 w-4" />
             Play Again
@@ -274,19 +274,19 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-secondary">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="p-4 bg-background/50 backdrop-blur-sm border-b border-border">
+      <div className="p-4 bg-card border-b-2 border-border">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold text-foreground font-serif">
               Vibed or Not
             </h1>
             <Badge variant="secondary" className="bg-primary/10 text-primary">
               Score: {gameState.score}
             </Badge>
             {gameState.streak > 1 && (
-              <Badge variant="default" className="bg-gradient-vibe text-vibe-foreground animate-pulse-glow">
+              <Badge variant="default" className="bg-primary text-primary-foreground border animate-pulse-glow">
                 <Zap className="mr-1 h-3 w-3" />
                 {gameState.streak}x Streak
               </Badge>
@@ -306,8 +306,8 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         {gameState.currentSite && (
           <div className="grid gap-4">
             {/* Website Preview */}
-            <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 shadow-card">
-              <div className="p-4 bg-background/50 border-b border-border">
+            <Card className="overflow-hidden bg-card border border-border shadow-card">
+              <div className="p-4 bg-muted border-b border-border">
                 <p className="text-sm text-muted-foreground">Rate this website:</p>
                 <h2 className="text-lg font-semibold text-foreground">{gameState.currentSite.name}</h2>
               </div>
@@ -327,17 +327,17 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
               <Button
                 onClick={() => handleVote(false)}
                 size="lg"
-                className="bg-gradient-not-vibe hover:bg-gradient-not-vibe/90 text-not-vibe-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+                className="bg-not-vibe hover:bg-not-vibe/90 text-not-vibe-foreground font-semibold px-8 py-6 text-lg border transition-all duration-200 font-serif"
               >
-                Not Vibed 👎
+                Not Vibed
               </Button>
               
               <Button
                 onClick={() => handleVote(true)}
                 size="lg"
-                className="bg-gradient-vibe hover:bg-gradient-vibe/90 text-vibe-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+                className="bg-vibe hover:bg-vibe/90 text-vibe-foreground font-semibold px-8 py-6 text-lg border transition-all duration-200 font-serif"
               >
-                Vibed 👍
+                Vibed
               </Button>
             </div>
           </div>

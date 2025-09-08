@@ -8,10 +8,10 @@ interface WelcomeScreenProps {
 
 export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
   return (
-    <div className="min-h-screen bg-gradient-secondary flex items-center justify-center p-4">
-      <Card className="p-8 max-w-2xl mx-auto bg-card/50 backdrop-blur-sm border-primary/20 shadow-glow animate-fade-in">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Card className="p-8 max-w-2xl mx-auto bg-card border border-border shadow-card">
         <div className="text-center mb-8">
-          <h1 className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
+          <h1 className="text-6xl font-bold text-foreground mb-4 font-serif">
             Vibe or Not
           </h1>
           <p className="text-xl text-muted-foreground mb-2">
@@ -23,17 +23,17 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
         </div>
 
         <div className="grid gap-4 mb-8">
-          <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg">
+          <div className="flex items-center gap-3 p-3 bg-muted border-l-2 border-primary">
             <Target className="h-5 w-5 text-primary" />
             <span className="text-sm">Vote "Vibed" or "Not Vibed" for each website</span>
           </div>
           
-          <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg">
+          <div className="flex items-center gap-3 p-3 bg-muted border-l-2 border-primary">
             <Zap className="h-5 w-5 text-vibe" />
             <span className="text-sm">Build streaks for bonus points</span>
           </div>
           
-          <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg">
+          <div className="flex items-center gap-3 p-3 bg-muted border-l-2 border-primary">
             <Heart className="h-5 w-5 text-destructive" />
             <span className="text-sm">You have 3 lives - don't waste them!</span>
           </div>
@@ -42,7 +42,7 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
         <Button 
           onClick={onStartGame}
           size="lg"
-          className="w-full bg-gradient-vibe hover:bg-gradient-vibe/90 text-vibe-foreground font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg border transition-all duration-200 font-serif"
         >
           <Play className="mr-2 h-5 w-5" />
           Start Playing
