@@ -55,6 +55,7 @@ const websiteData = [
   { id: 37, url: "https://moulikbudhiraja.com/", isVibe: false, name: "Moulik Budhiraja" },
   { id: 38, url: "https://suneru.ca/", isVibe: false, name: "Suneru Perera" },
   { id: 39, url: "https://www.krishgarg.ca/", isVibe: false, name: "Krish Garg" },
+  { id: 40, url: "https://www.aayanrahman.me/", isVibe: true, name: "Aayan Rahman" },
 ];
 
 interface GameState {
