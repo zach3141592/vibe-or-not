@@ -57,7 +57,8 @@ const websiteData = [
   { id: 39, url: "https://www.krishgarg.ca/", isVibe: false, name: "Krish Garg" },
   { id: 40, url: "https://www.aayanrahman.me/", isVibe: true, name: "Aayan Rahman" },
   { id: 41, url: "https://www.lanceyan.tech/", isVibe: false, name: "Lance Yan" },
-  { id: 42, url: " https://www.noahbarbaros.com/", isVibe: true, name: "Noah Barbaros" },
+  { id: 42, url: "https://www.noahbarbaros.com/", isVibe: true, name: "Noah Barbaros" },
+  { id: 43, url: "https://useallmind.ai/", isVibe: false, name: "AllMind AI" },
 ];
 
 interface GameState {
