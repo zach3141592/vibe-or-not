@@ -33,7 +33,7 @@ const websiteData = [
   { id: 15, url: "https://afaqvirk.com/", isVibe: true, name: "Afaq Virk" },
   { id: 16, url: "https://synopsis-sigma.vercel.app/", isVibe: true, name: "Synopsis" },
   { id: 17, url: "https://www.axiomstartups.ca/index.html#info-section", isVibe: true, name: "Axiom Startups" },
-  { id: 18, url: "https://3e8robotics.com/", isVibe: true, name: "3E8 Robotics" },
+  { id: 18, url: "https://www.grantou.com/", isVibe: false, name: "Grant Ou" },
   { id: 19, url: "https://www.matthewyang.ca", isVibe: true, name: "Matthew Yang" },
   { id: 20, url: "https://www.villio.ai/", isVibe: true, name: "Villio AI" },
   { id: 21, url: "https://www.hjcautomation.com/", isVibe: true, name: "HJC Automation" },
@@ -57,7 +57,6 @@ const websiteData = [
   { id: 39, url: "https://www.krishgarg.ca/", isVibe: false, name: "Krish Garg" },
   { id: 40, url: "https://www.aayanrahman.me/", isVibe: true, name: "Aayan Rahman" },
   { id: 41, url: "https://www.lanceyan.tech/", isVibe: false, name: "Lance Yan" },
-  { id: 42, url: "https://www.grantou.com/", isVibe: false, name: "Grant Ou" },
 ];
 
 interface GameState {
