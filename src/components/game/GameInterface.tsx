@@ -56,7 +56,7 @@ const websiteData = [
   { id: 38, url: "https://suneru.ca/", isVibe: false, name: "Suneru Perera" },
   { id: 39, url: "https://www.krishgarg.ca/", isVibe: false, name: "Krish Garg" },
   { id: 40, url: "https://www.aayanrahman.me/", isVibe: true, name: "Aayan Rahman" },
-  { id: 41, url: "https://www.lanceyan.tech/", isVibe: true, name: "Lance Yan" },
+  { id: 41, url: "https://www.lanceyan.tech/", isVibe: false, name: "Lance Yan" },
   { id: 42, url: "https://www.noahbarbaros.com/", isVibe: true, name: "Noah Barbaros" },
   { id: 43, url: "https://jame.li/", isVibe: false, name: "James Li" },
   { id: 44, url: "https://elrichchen.lovable.app/", isVibe: true, name: "Elrich Chen" },
