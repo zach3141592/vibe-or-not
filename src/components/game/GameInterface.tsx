@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Zap, RotateCcw, Trophy } from "lucide-react";
+import { Heart, Zap, RotateCcw, Trophy, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import {
   AlertDialog,
@@ -58,7 +58,7 @@ const websiteData = [
   { id: 40, url: "https://www.aayanrahman.me/", isVibe: true, name: "Aayan Rahman" },
   { id: 41, url: "https://www.lanceyan.tech/", isVibe: false, name: "Lance Yan" },
   { id: 42, url: "https://www.noahbarbaros.com/", isVibe: true, name: "Noah Barbaros" },
-  { id: 43, url: "https://useallmind.ai/", isVibe: false, name: "AllMind AI" },
+  { id: 43, url: "https://jame.li/", isVibe: false, name: "James Li" },
   { id: 44, url: "https://elrichchen.lovable.app/", isVibe: true, name: "Elrich Chen" },
   { id: 45, url: "https://austinjian.ca/", isVibe: false, name: "Austin Jian" },
 ];
@@ -88,6 +88,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
     usedSiteIds: [],
     allSitesCompleted: false,
   });
+
 
   const getRandomSite = () => {
     const availableSites = websiteData.filter(
@@ -315,7 +316,18 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
             <Card className="overflow-hidden bg-card border border-border shadow-card">
               <div className="p-4 bg-muted border-b border-border">
                 <p className="text-sm text-muted-foreground">Rate this website:</p>
-                <h2 className="text-lg font-semibold text-foreground">{gameState.currentSite.name}</h2>
+                <div className="flex items-center gap-2">
+                  <h2 className="text-lg font-semibold text-foreground">{gameState.currentSite.name}</h2>
+                  <Button
+                    onClick={() => window.open(gameState.currentSite.url, '_blank')}
+                    size="sm"
+                    variant="ghost"
+                    className="h-6 w-6 p-0 hover:bg-muted-foreground/10"
+                    title="Open in new tab"
+                  >
+                    <ExternalLink className="h-3 w-3" />
+                  </Button>
+                </div>
               </div>
               
               <div className="aspect-video">
