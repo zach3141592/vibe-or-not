@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Play, Target, Zap, Heart } from "lucide-react";
+import { Play, Target, Zap, Heart, Plus } from "lucide-react";
 
 interface WelcomeScreenProps {
   onStartGame: () => void;
@@ -58,9 +58,21 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
           Start Playing
         </Button>
 
+        <div className="mt-4 flex justify-center">
+          <Button 
+            onClick={() => window.open('https://forms.gle/bKotMS8bL1C7EoKX9', '_blank')}
+            variant="outline"
+            size="sm"
+            className="text-xs bg-transparent border-border hover:bg-muted transition-all duration-200"
+          >
+            <Plus className="mr-1 h-3 w-3" />
+            Give Us Your Site :)
+          </Button>
+        </div>
+
         <div className="mt-6 p-4 bg-success/10 rounded-lg border border-success/20">
           <p className="text-sm text-center text-muted-foreground">
-            <strong>Ready to play!</strong> All websites loaded and ready for rating.
+            <strong>Ready to play</strong> All websites loaded and ready.
           </p>
         </div>
       </Card>

@@ -315,7 +315,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
             {/* Website Preview */}
             <Card className="overflow-hidden bg-card border border-border shadow-card">
               <div className="p-4 bg-muted border-b border-border">
-                <p className="text-sm text-muted-foreground">Rate this website:</p>
+                <p className="text-sm text-muted-foreground">determine if this site is vibe coded or not:</p>
                 <div className="flex items-center gap-2">
                   <h2 className="text-lg font-semibold text-foreground">{gameState.currentSite.name}</h2>
                   <Button
