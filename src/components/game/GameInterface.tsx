@@ -61,6 +61,9 @@ const websiteData = [
   { id: 43, url: "https://jame.li/", isVibe: false, name: "James Li" },
   { id: 44, url: "https://elrichchen.lovable.app/", isVibe: true, name: "Elrich Chen" },
   { id: 45, url: "https://austinjian.ca/", isVibe: false, name: "Austin Jian" },
+  { id: 46, url: "https://aravmathur.vercel.app/", isVibe: false, name: "Arav Mathur" },
+  { id: 46, url: "https://ayan-nalawade.vercel.app/", isVibe: true, name: "Ayan Nalawade" },
+  { id: 47, url: "https://virk-arjun.github.io/", isVibe: false, name: "Arjun Virk" },
 ];
 
 interface GameState {
