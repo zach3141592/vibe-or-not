@@ -72,7 +72,7 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
 
         <div className="mt-6 p-4 bg-success/10 rounded-lg border border-success/20">
           <p className="text-sm text-center text-muted-foreground">
-            <strong>Ready to play</strong> All websites loaded and ready.
+            <strong>Ready to play...</strong> All websites are loaded.
           </p>
         </div>
       </Card>
