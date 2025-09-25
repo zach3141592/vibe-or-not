@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Play, Github } from "lucide-react";
 
 interface WelcomeScreenProps {
   onStartGame: () => void;
@@ -37,15 +37,27 @@ export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
           Can you tell if these sites are vibe coded or not?
         </p>
         
-        {/* Start button */}
-        <Button 
-          onClick={onStartGame}
-          size="lg"
-          className="bg-white/95 text-black hover:bg-white font-medium px-12 py-6 text-lg transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm"
-        >
-          <Play className="mr-3 h-6 w-6" />
-          Start Playing
-        </Button>
+        {/* Action buttons */}
+        <div className="flex flex-col gap-4 items-center">
+          <Button 
+            onClick={onStartGame}
+            size="lg"
+            className="bg-white/95 text-black hover:bg-white font-medium px-12 py-6 text-lg transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm"
+          >
+            <Play className="mr-3 h-6 w-6" />
+            Start Playing
+          </Button>
+          
+          <Button 
+            onClick={() => window.open('https://github.com/Casper-Dong/vibe-or-not', '_blank')}
+            size="lg"
+            variant="outline"
+            className="bg-transparent border-white/30 text-white hover:bg-white/10 font-medium px-8 py-4 text-base transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+          >
+            <Github className="mr-2 h-5 w-5" />
+            Star us on GitHub
+          </Button>
+        </div>
       </div>
       
       {/* Bottom section */}
