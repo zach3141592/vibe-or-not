@@ -1,81 +1,59 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Play, Target, Zap, Heart, Plus } from "lucide-react";
+import { Play } from "lucide-react";
 
 interface WelcomeScreenProps {
   onStartGame: () => void;
 }
 
 export default function WelcomeScreen({ onStartGame }: WelcomeScreenProps) {
+
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <Card className="p-8 max-w-2xl mx-auto border border-border shadow-card" style={{ backgroundColor: '#313032' }}>
-        <div className="text-center mb-8">
-          <div className="mb-4 flex justify-center">
-            <video 
-              autoPlay 
-              muted 
-              className="h-24 w-auto"
-              style={{ maxWidth: '100%' }}
-            >
-              <source src="/title.mp4" type="video/mp4" />
-              <h1 className="text-6xl font-bold text-foreground mb-4 font-serif">
-                Vibe or Not
-              </h1>
-            </video>
-          </div>
-          <p className="text-xl text-muted-foreground mb-2">
-            Deduce which sites are vibe coded...
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Can you spot which sites have that special something?
-          </p>
+    <div 
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
+      style={{ 
+        backgroundColor: '#313032'
+      }}
+    >
+      
+      {/* Main content */}
+      <div className="relative z-10 text-center px-4">
+        {/* Main video/logo */}
+        <div className="mb-12">
+          <video 
+            autoPlay 
+            muted 
+            className="h-64 w-auto mx-auto"
+            style={{ maxWidth: '800px' }}
+            onEnded={(e) => {
+              e.currentTarget.pause();
+            }}
+          >
+            <source src="/title.mp4" type="video/mp4" />
+          </video>
         </div>
-
-        <div className="grid gap-4 mb-8">
-          <div className="flex items-center gap-3 p-3 bg-muted border-l-2 border-primary">
-            <Target className="h-5 w-5 text-primary" />
-            <span className="text-sm">Vote "Vibed" or "Not Vibed" for each website</span>
-          </div>
-          
-          <div className="flex items-center gap-3 p-3 bg-muted border-l-2 border-primary">
-            <Zap className="h-5 w-5 text-vibe" />
-            <span className="text-sm">Build streaks for bonus points</span>
-          </div>
-          
-          <div className="flex items-center gap-3 p-3 bg-muted border-l-2 border-primary">
-            <Heart className="h-5 w-5 text-destructive" />
-            <span className="text-sm">You have 3 lives - don't waste them!</span>
-          </div>
-        </div>
-
+        
+        {/* Minimal subtitle */}
+        <p className="text-white/90 text-lg mb-16 font-light tracking-wide drop-shadow-lg">
+          Can you spot which sites have that special something?
+        </p>
+        
+        {/* Start button */}
         <Button 
           onClick={onStartGame}
           size="lg"
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg border transition-all duration-200 font-serif"
+          className="bg-white/95 text-black hover:bg-white font-medium px-12 py-6 text-lg transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm"
         >
-          <Play className="mr-2 h-5 w-5" />
+          <Play className="mr-3 h-6 w-6" />
           Start Playing
         </Button>
-
-        <div className="mt-4 flex justify-center">
-          <Button 
-            onClick={() => window.open('https://forms.gle/bKotMS8bL1C7EoKX9', '_blank')}
-            variant="outline"
-            size="sm"
-            className="text-xs bg-transparent border-border hover:bg-muted transition-all duration-200"
-          >
-            <Plus className="mr-1 h-3 w-3" />
-            Give Us Your Site :)
-          </Button>
-        </div>
-
-        <div className="mt-6 p-4 bg-success/10 rounded-lg border border-success/20">
-          <p className="text-sm text-center text-muted-foreground">
-            <strong>Ready to play...</strong> All websites are loaded.
-          </p>
-        </div>
-      </Card>
+      </div>
+      
+      {/* Subtle bottom text */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <p className="text-white/60 text-sm drop-shadow-md">
+          Deduce which sites are vibe coded
+        </p>
+      </div>
     </div>
   );
 }

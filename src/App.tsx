@@ -20,12 +20,6 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      {/* AI Attribution Banner */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm border-t border-border px-4 py-2 z-50">
-        <p className="text-center text-xs text-muted-foreground">
-          this site was made by humans...and a bit of ai...
-        </p>
-      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );
