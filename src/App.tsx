@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -20,12 +21,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      {/* AI Attribution Banner */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm border-t border-border px-4 py-2 z-50">
-        <p className="text-center text-xs text-muted-foreground">
-          this site was made by humans...and a bit of ai...
-        </p>
-      </div>
+      <Analytics />
     </TooltipProvider>
   </QueryClientProvider>
 );

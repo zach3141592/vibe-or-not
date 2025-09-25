@@ -164,7 +164,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
       toast({
         title: "Correct!",
         description: `+${10 + (gameState.streak * 2)} points ${newStreak > 1 ? `(${newStreak}x streak!)` : ''}`,
-        className: "bg-gray-300 border border-black text-black",
+        className: "bg-green-500/90 border border-green-400 text-white backdrop-blur-sm",
       });
     } else {
       const newLives = gameState.lives - 1;
@@ -180,7 +180,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         toast({
           title: "Game Over",
           description: `Final score: ${gameState.score}`,
-          variant: "destructive",
+          className: "bg-red-500/90 border border-red-400 text-white backdrop-blur-sm",
         });
       } else {
         if (!nextSite) {
@@ -205,7 +205,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
         toast({
           title: "Wrong!",
           description: `${newLives} ${newLives === 1 ? 'life' : 'lives'} remaining`,
-          variant: "destructive",
+          className: "bg-red-500/90 border border-red-400 text-white backdrop-blur-sm",
         });
       }
     }
@@ -217,29 +217,28 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
 
   if (gameState.gameOver) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <Card className="p-8 text-center max-w-md mx-auto bg-white border border-border shadow-card">
-          <div className="mb-6">
-            <h1 className="text-4xl font-bold text-black mb-2 font-serif">
+      <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: '#313032' }}>
+        <Card className="p-10 text-center max-w-lg mx-auto bg-white/10 border border-white/20 backdrop-blur-sm">
+          <div className="mb-8">
+            <h1 className="text-5xl font-bold text-white mb-3 font-serif tracking-tight">
               Game Over!
             </h1>
-            <p className="text-gray-600">You've used all your lives</p>
+            <p className="text-white/70 text-lg">You've used all your lives</p>
           </div>
           
-          <div className="mb-6 p-4 bg-gray-50 border-l-4 border-black">
-            <p className="text-2xl font-bold text-black">Final Score</p>
-            <p className="text-4xl font-bold text-black font-serif">
+          <div className="mb-8 p-6 bg-white/5 border border-white/10 rounded-lg">
+            <p className="text-xl font-semibold text-white mb-2">Final Score</p>
+            <p className="text-6xl font-bold text-white font-serif">
               {gameState.score}
             </p>
           </div>
 
           <Button 
             onClick={startNewGame}
-            variant="default"
             size="lg"
-            className="bg-black hover:bg-gray-800 text-white font-semibold border font-serif"
+            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-8 py-4 text-lg border-0 transition-all duration-300 hover:scale-105 hover:shadow-lg font-serif"
           >
-            <RotateCcw className="mr-2 h-4 w-4" />
+            <RotateCcw className="mr-2 h-5 w-5" />
             Play Again
           </Button>
         </Card>
@@ -249,96 +248,104 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
 
   if (gameState.allSitesCompleted) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <Card className="p-8 text-center max-w-md mx-auto bg-white border border-border shadow-card">
-          <div className="mb-6">
-            <Trophy className="h-16 w-16 text-black mx-auto mb-4" />
-            <h1 className="text-4xl font-bold text-black mb-2 font-serif">
+      <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: '#313032' }}>
+        <Card className="p-10 text-center max-w-lg mx-auto bg-white/10 border border-white/20 backdrop-blur-sm">
+          <div className="mb-8">
+            <Trophy className="h-20 w-20 text-yellow-400 mx-auto mb-6" />
+            <h1 className="text-5xl font-bold text-white mb-3 font-serif tracking-tight">
               Congratulations!
             </h1>
-            <p className="text-gray-600">You've rated all {websiteData.length} websites!</p>
+            <p className="text-white/70 text-lg">You've rated all {websiteData.length} websites!</p>
           </div>
           
-          <div className="mb-6 p-4 bg-gray-50 border-l-4 border-black">
-            <p className="text-2xl font-bold text-black">Final Score</p>
-            <p className="text-4xl font-bold text-black font-serif">
+          <div className="mb-8 p-6 bg-white/5 border border-white/10 rounded-lg">
+            <p className="text-xl font-semibold text-white mb-2">Final Score</p>
+            <p className="text-6xl font-bold text-white font-serif">
               {gameState.score}
             </p>
           </div>
 
-          <Button 
-            onClick={startNewGame}
-            size="lg"
-            className="w-full bg-black hover:bg-gray-800 text-white font-semibold mb-4 border font-serif"
-          >
-            <RotateCcw className="mr-2 h-4 w-4" />
-            Play Again
-          </Button>
+          <div className="space-y-4">
+            <Button 
+              onClick={startNewGame}
+              size="lg"
+              className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-4 text-lg border-0 transition-all duration-300 hover:scale-105 hover:shadow-lg font-serif"
+            >
+              <RotateCcw className="mr-2 h-5 w-5" />
+              Play Again
+            </Button>
 
-          <Button 
-            onClick={onBackToMenu}
-            variant="outline"
-            size="lg"
-            className="w-full"
-          >
-            Back to Menu
-          </Button>
+            <Button 
+              onClick={onBackToMenu}
+              variant="outline"
+              size="lg"
+              className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+            >
+              Back to Menu
+            </Button>
+          </div>
         </Card>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: '#313032' }}>
       {/* Header */}
-      <div className="p-4 bg-card border-b-2 border-border">
-        <div className="max-w-4xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold text-foreground font-serif">
-              Vibed or Not
+      <div className="px-6 py-4 border-b border-white/10">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <h1 className="text-3xl font-bold text-white font-serif tracking-tight">
+              Vibe or Not
             </h1>
-            <Badge variant="secondary" className="bg-primary/10 text-primary">
-              Score: {gameState.score}
-            </Badge>
-            {gameState.streak > 1 && (
-              <Badge variant="default" className="bg-primary text-primary-foreground border animate-pulse-glow">
-                <Zap className="mr-1 h-3 w-3" />
-                {gameState.streak}x Streak
+            <div className="flex items-center gap-3">
+              <Badge variant="secondary" className="bg-white/10 text-white border-white/20 px-3 py-1">
+                Score: {gameState.score}
               </Badge>
-            )}
+              {gameState.streak > 1 && (
+                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 px-3 py-1 animate-pulse">
+                  <Zap className="mr-1 h-3 w-3" />
+                  {gameState.streak}x Streak
+                </Badge>
+              )}
+            </div>
           </div>
           
           <div className="flex items-center gap-2">
+            <span className="text-white/70 text-sm mr-2">Lives:</span>
             {Array.from({ length: gameState.lives }).map((_, i) => (
-              <Heart key={i} className="h-5 w-5 text-destructive fill-current" />
+              <Heart key={i} className="h-6 w-6 text-red-400 fill-current" />
+            ))}
+            {Array.from({ length: 3 - gameState.lives }).map((_, i) => (
+              <Heart key={`empty-${i}`} className="h-6 w-6 text-white/20" />
             ))}
           </div>
         </div>
       </div>
 
       {/* Main Game Area */}
-      <div className="p-4 max-w-4xl mx-auto">
+      <div className="px-6 py-8 max-w-6xl mx-auto">
         {gameState.currentSite && (
-          <div className="grid gap-4">
+          <div className="space-y-8">
             {/* Website Preview */}
-            <Card className="overflow-hidden bg-card border border-border shadow-card">
-              <div className="p-4 bg-muted border-b border-border">
-                <p className="text-sm text-muted-foreground">determine if this site is vibe coded or not:</p>
-                <div className="flex items-center gap-2">
-                  <h2 className="text-lg font-semibold text-foreground">{gameState.currentSite.name}</h2>
+            <Card className="overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="px-6 py-4 bg-white/5 border-b border-white/10">
+                <p className="text-sm text-white/70 mb-2">Determine if this site is vibe coded or not:</p>
+                <div className="flex items-center gap-3">
+                  <h2 className="text-xl font-semibold text-white font-serif">{gameState.currentSite.name}</h2>
                   <Button
                     onClick={() => window.open(gameState.currentSite.url, '_blank')}
                     size="sm"
                     variant="ghost"
-                    className="h-6 w-6 p-0 hover:bg-muted-foreground/10"
+                    className="h-8 w-8 p-0 hover:bg-white/10 text-white/70 hover:text-white transition-colors"
                     title="Open in new tab"
                   >
-                    <ExternalLink className="h-3 w-3" />
+                    <ExternalLink className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
               
-              <div className="aspect-video">
+              <div className="aspect-video bg-black/20">
                 <iframe
                   src={gameState.currentSite.url}
                   className="w-full h-full"
@@ -349,11 +356,11 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
             </Card>
 
             {/* Voting Buttons */}
-            <div className="flex gap-4 justify-center mb-32">
+            <div className="flex gap-6 justify-center">
               <Button
                 onClick={() => handleVote(false)}
                 size="lg"
-                className="bg-not-vibe hover:bg-not-vibe/90 text-not-vibe-foreground font-semibold px-8 py-6 text-lg border transition-all duration-200 font-serif"
+                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold px-12 py-6 text-xl border-0 transition-all duration-300 hover:scale-105 hover:shadow-lg font-serif"
               >
                 Not Vibed
               </Button>
@@ -361,7 +368,7 @@ export default function GameInterface({ onBackToMenu }: GameInterfaceProps) {
               <Button
                 onClick={() => handleVote(true)}
                 size="lg"
-                className="bg-vibe hover:bg-vibe/90 text-vibe-foreground font-semibold px-8 py-6 text-lg border transition-all duration-200 font-serif"
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-12 py-6 text-xl border-0 transition-all duration-300 hover:scale-105 hover:shadow-lg font-serif"
               >
                 Vibed
               </Button>
