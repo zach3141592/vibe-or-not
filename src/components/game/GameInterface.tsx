@@ -45,7 +45,7 @@ const websiteData = [
   { id: 27, url: "https://varun.ch/", isVibe: false, name: "Varun Biniwale" },
   { id: 28, url: "https://cristianodasilvaportfolio.weebly.com/", isVibe: false, name: "Cristiano Da Silva" },
   { id: 29, url: "https://awesomethan.github.io/personal-website/#/", isVibe: false, name: "Ethan Wang" },
-  { id: 30, url: "http://martinsit.ca/", isVibe: false, name: "Martin Sit" },
+  { id: 30, url: "https://thebityard.org/", isVibe: false, name: "Ahoy-hoy" },
   { id: 31, url: "https://www.casperdong.info/", isVibe: true, name: "Casper Dong" },
   { id: 32, url: "https://solderable.dev/", isVibe: true, name: "Solderable" },
   { id: 33, url: "https://www.contractual.ca/", isVibe: true, name: "Contractual" },
@@ -66,9 +66,7 @@ const websiteData = [
   { id: 47, url: "https://virk-arjun.github.io/", isVibe: false, name: "Arjun Virk" },
   { id: 48, url: "https://rizzable.vercel.app/", isVibe: true, name: "Rizzable" },
   { id: 49, url: "https://owenchen07.github.io/", isVibe: true, name: "Owen Chen" },
-  { id: 50, url: "https://jashan.vercel.app/", isVibe: false, name: "Jashan Singh" },
-  { id: 51, url: "https://www.williamcielen.com/", isVibe: false, name: "William Cielen" },
-  { id: 52, url: " https://thebityard.org/", isVibe: false, name: "Ahoy-hoy" }, 
+  { id: 50, url: "https://www.williamcielen.com/", isVibe: false, name: "William Cielen" },
 ];
 
 interface GameState {
