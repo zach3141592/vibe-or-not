@@ -62,7 +62,6 @@ const websiteData = [
   { id: 44, url: "https://elrichchen.lovable.app/", isVibe: true, name: "Elrich Chen" },
   { id: 45, url: "https://austinjian.ca/", isVibe: false, name: "Austin Jian" },
   { id: 46, url: "https://aravmathur.vercel.app/", isVibe: false, name: "Arav Mathur" },
-  { id: 46, url: "https://ayan-nalawade.vercel.app/", isVibe: true, name: "Ayan Nalawade" },
   { id: 47, url: "https://virk-arjun.github.io/", isVibe: false, name: "Arjun Virk" },
   { id: 48, url: "https://rizzable.vercel.app/", isVibe: true, name: "Rizzable" },
   { id: 49, url: "https://owenchen07.github.io/", isVibe: true, name: "Owen Chen" },
