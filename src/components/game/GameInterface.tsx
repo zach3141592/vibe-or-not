@@ -46,7 +46,7 @@ const websiteData = [
   { id: 28, url: "https://cristianodasilvaportfolio.weebly.com/", isVibe: false, name: "Cristiano Da Silva" },
   { id: 29, url: "https://awesomethan.github.io/personal-website/#/", isVibe: false, name: "Ethan Wang" },
   { id: 30, url: "https://thebityard.org/", isVibe: false, name: "Ahoy-hoy" },
-  { id: 31, url: "https://www.casperdong.info/", isVibe: true, name: "Casper Dong" },
+  { id: 31, url: "https://www.casperdong.com/", isVibe: false, name: "Casper Dong" },
   { id: 32, url: "https://solderable.dev/", isVibe: true, name: "Solderable" },
   { id: 33, url: "https://www.contractual.ca/", isVibe: true, name: "Contractual" },
   { id: 34, url: "https://www.ibrahimkhawar.com/", isVibe: false, name: "Ibrahim Khawar" },
@@ -56,7 +56,7 @@ const websiteData = [
   { id: 38, url: "https://suneru.ca/", isVibe: false, name: "Suneru Perera" },
   { id: 39, url: "https://www.krishgarg.ca/", isVibe: false, name: "Krish Garg" },
   { id: 40, url: "https://www.aayanrahman.me/", isVibe: true, name: "Aayan Rahman" },
-  { id: 41, url: "https://www.lanceyan.tech/", isVibe: false, name: "Lance Yan" },
+  { id: 41, url: "https://www.lanceyan.tech/", isVibe: true, name: "Lance Yan" },
   { id: 42, url: "https://www.noahbarbaros.com/", isVibe: true, name: "Noah Barbaros" },
   { id: 43, url: "https://jame.li/", isVibe: false, name: "James Li" },
   { id: 44, url: "https://elrichchen.lovable.app/", isVibe: true, name: "Elrich Chen" },
@@ -66,6 +66,11 @@ const websiteData = [
   { id: 48, url: "https://rizzable.vercel.app/", isVibe: true, name: "Rizzable" },
   { id: 49, url: "https://owenchen07.github.io/", isVibe: true, name: "Owen Chen" },
   { id: 50, url: "https://www.williamcielen.com/", isVibe: false, name: "William Cielen" },
+  { id: 51, url: "http://hareshgoyal.ca/", isVibe: false, name: "Haresh Goyal" },
+  { id: 52, url: "https://hareshgoyal.xyz/", isVibe: true, name: "Haresh Goyal" },
+  { id: 53, url: "https://dundeezhang.com/", isVibe: false, name: "Dundee Zhang" },
+  { id: 54, url: "https://www.jacobfu.com/", isVibe: true, name: "Jacob Fu" },
+  { id: 55, url: "https://rghv.ca/", isVibe: false, name: "Raghav Agarwal" },
 ];
 
 interface GameState {
