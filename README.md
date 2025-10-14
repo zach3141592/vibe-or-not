@@ -4,6 +4,11 @@ guess whether your friend's portfolios are vibe coded or not...
 
 give us your site here: https://forms.gle/bKotMS8bL1C7EoKX9
 
+to do:
+- mobile warning page -> tell users to use laptop
+- leader board -> supabase
+- validity checker
+
 ## Project info
 
 ```sh
