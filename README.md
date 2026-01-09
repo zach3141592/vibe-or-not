@@ -1,4 +1,4 @@
-# Vibe or Not (18K+ Users)
+# Vibe or Not (25K+ Users)
 
 guess whether your friend's portfolios are vibe coded or not...
 
